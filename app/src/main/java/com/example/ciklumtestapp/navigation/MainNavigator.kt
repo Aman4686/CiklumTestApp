@@ -1,7 +1,7 @@
 package com.example.ciklumtestapp.navigation
 
 interface MainNavigator {
-    fun navigateToImageInfo()
+    fun navigateToImageInfo(originalImageUrl : String)
     fun navigateBack()
 
 }

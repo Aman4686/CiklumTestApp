@@ -6,6 +6,17 @@
     <fragment
         android:id="@+id/imageListFragment"
         android:name="com.example.ciklumtestapp.features.imageList.ImageListFragment"
-        android:label="ImageListFragment" />
+        android:label="ImageListFragment" >
+        <action
+            android:id="@+id/action_imageListFragment_to_imageInfoFragment"
+            app:destination="@id/imageInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageInfoFragment"
+        android:name="com.example.ciklumtestapp.features.imageInfo.ImageInfoFragment"
+        android:label="ImageInfoFragment" />
+    <argument
+        android:name="originalImageUrl"
+        app:argType="string" />
 
 </navigation>

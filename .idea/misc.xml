@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/User/AndroidStudioProjects/CiklumTestApp/app/src/main/res/layout/fragment_image_info.xml" value="0.39739884393063585" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/CiklumTestApp/app/src/main/res/layout/fragment_image_list.xml" value="0.1859375" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CiklumTestApp/app/src/main/res/layout/activity_main.xml" value="0.2006340579710145" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CiklumTestApp/app/src/main/res/layout/fragment_image_info.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CiklumTestApp/app/src/main/res/layout/fragment_image_list.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CiklumTestApp/app/src/main/res/layout/item_tumblr.xml" value="0.213768115942029" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CiklumTestApp/app/src/main/res/layout/nav_container.xml" value="0.24791666666666667" />
       </map>
     </option>

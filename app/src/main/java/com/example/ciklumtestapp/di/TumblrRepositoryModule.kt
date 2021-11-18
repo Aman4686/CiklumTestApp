@@ -1,5 +1,6 @@
 package com.example.ciklumtestapp.di
 
+import com.example.ciklumtestapp.remote.TumblrApi
 import com.example.ciklumtestapp.remote.TumblrRepository
 import dagger.Module
 import dagger.Provides
@@ -8,8 +9,8 @@ import dagger.Provides
 class TumblrRepositoryModule {
 
     @Provides
-    fun provideTumblrRepository() : TumblrRepository{
-        return TumblrRepository()
+    fun provideTumblrRepository(tumblrApi : TumblrApi) : TumblrRepository{
+        return TumblrRepository(tumblrApi)
     }
 
 

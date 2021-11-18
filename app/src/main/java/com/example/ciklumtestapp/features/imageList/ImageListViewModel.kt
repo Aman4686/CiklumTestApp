@@ -1,15 +1,43 @@
 package com.example.ciklumtestapp.features.imageList
 
+import TumbltResponsePOJO
+import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.ciklumtestapp.features.imageInfo.ImageInfoViewModel
-import com.example.ciklumtestapp.navigation.MainNavigator
+import com.example.ciklumtestapp.base.BaseViewModel
 import com.example.ciklumtestapp.remote.TumblrRepository
 import javax.inject.Inject
 
 class ImageListViewModel constructor(
     val tumblrRepo: TumblrRepository
-) : ViewModel() {
+) : BaseViewModel() {
+
+    val tumblrResponseLiveData = MutableLiveData<TumbltResponsePOJO>()
+
+    init {
+        initImageListByDefault()
+    }
+
+    fun initImageListByTag(tag : String){
+        val disposable = tumblrRepo.getTaggedByTag(tag)
+            .subscribe({
+                tumblrResponseLiveData.value = it
+            },{
+                Log.d("TestResult",  it.message.toString())
+            })
+        addDisposable(disposable)
+    }
+
+    fun initImageListByDefault(){
+        val disposable = tumblrRepo.getTaggedByDefault()
+            .subscribe({
+                tumblrResponseLiveData.value = it
+            },{
+                Log.d("TestResult",  it.message.toString())
+            })
+        addDisposable(disposable)
+    }
 
     class Factory @Inject constructor(
         private val tumblrRepo: TumblrRepository
