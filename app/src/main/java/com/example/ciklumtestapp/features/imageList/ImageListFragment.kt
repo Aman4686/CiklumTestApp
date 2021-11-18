@@ -34,6 +34,13 @@ class ImageListFragment : Fragment() {
         super.onAttach(context)
     }
 
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initObservers()
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         model = ViewModelProvider(this, factory)[ImageListViewModel::class.java]
@@ -74,13 +81,7 @@ class ImageListFragment : Fragment() {
         }
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        initObservers()
-    }
-
     private fun initObservers(){
-
         model.tumblrResponseLiveData.observe(viewLifecycleOwner){
             adapter.tumblrResponseList = it.response
         }
